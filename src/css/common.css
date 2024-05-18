@@ -1,0 +1,168 @@
+/* @import url("styles/common/normalize.css");
+@import url("styles/common/colors.css"); */
+@import url("font.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+button {
+  /* padding: 0 15px 20px 15px; 위아래 padding을 0으로 조정하여 텍스트가 버튼 내부에서 수직으로 가운데에 정렬되도록 합니다. */
+  font-size: 16px;
+  border: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 3.5px solid black;
+  line-height: 40px; /* 텍스트의 수직 정렬을 버튼의 높이와 동일하게 설정 */
+  text-align: center; /* 텍스트를 수평으로 가운데 정렬. */
+  /* margin-right: 25px; */
+}
+
+button.active {
+  /* background-color: #ccc; */
+  border: 3.5px solid white;
+  color: white;
+}
+
+/* 네브바 */
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #ffffff; */
+  padding: 40px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.menu-item {
+  /* background-color: #ffffff; */
+  border-radius: 40px;
+  padding: 10px 40px;
+  margin: 0 10px;
+  /* transition: background-color 1s ease-in-out; */
+  /* border: 3px solid #ffffff; */
+  position: relative;
+}
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+  border-radius: 25px;
+}
+
+.menu-item.active::before {
+  width: 100%;
+}
+
+.menu-item a {
+  position: relative; /* 부모 요소에 상대 위치 설정 */
+  z-index: 1; /* 텍스트가 배경 위에 보이도록 함 */
+}
+/* .menu-item.active {
+  background-color: white;
+} */
+.menu-item.active a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 6px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px; /* 예시로 18px로 설정 */
+  letter-spacing: 6px;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* transform: translate(-50%, calc(-50% + 30px)); */
+}
+
+.container .row .col h3 {
+  color: #ffffff; /* 원하는 색상으로 변경 */
+  font-size: 24px; /* 원하는 글자 크기로 변경 */
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.container .row .col Button {
+  background-color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  color: black; /* 원하는 색상으로 변경 */
+  font-size: 24px; /* 원하는 글자 크기로 변경 */
+  margin: 50px 15px 0px 15px;
+}
+
+.container .row .col Button:hover {
+  background-color: black;
+  color: white;
+}
+
+.container .row .col {
+  font-size: 20px; /* 원하는 폰트 크기로 변경 */
+  color: white;
+}
+
+.center-items {
+  font-size: 20px; /* 원하는 폰트 크기로 변경 */
+  color: white;
+  font-weight: bold;
+  /* margin: 15px 0px 15px 0px; */
+}
+
+.text-center .row {
+  margin-top: 30px; /* 원하는 여백 크기로 조정 */
+}
+
+.designer {
+  padding: 10px 0 10px 0;
+}
+.time {
+  padding: 10px 0 10px 0;
+}
+.style {
+  padding: 10px 0 10px 0;
+}
+.shampoo {
+  padding: 20px 0 20px 0;
+}
+
+.hair {
+  padding: 20px 0 20px 0;
+}
+.designer.selected {
+  border-bottom: 3px solid white;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.selected {
+  border-bottom: 3px solid white;
+  max-width: 50%;
+  margin: 0 auto;
+}

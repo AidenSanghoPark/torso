@@ -1,0 +1,32 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: pink;
+  height: 100px;
+}
+
+.nav {
+  flex-grow: 1; /* 남은 공간을 모두 차지하도록 함 */
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  gap: 20px; /* 버튼 사이의 간격 */
+}
+
+button {
+  padding: 0 20px; /* 위아래 padding을 0으로 조정하여 텍스트가 버튼 내부에서 수직으로 가운데에 정렬되도록 합니다. */
+  font-size: 16px;
+  border: none;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 3.5px solid black;
+  line-height: 40px; /* 텍스트의 수직 정렬을 버튼의 높이와 동일하게 설정 */
+  text-align: center; /* 텍스트를 수평으로 가운데 정렬. */
+}
+
+button.active {
+  border: 3.5px solid white;
+}

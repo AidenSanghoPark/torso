@@ -1,0 +1,38 @@
+/* src/css/main.css */
+
+/* App.css */
+.App {
+  text-align: center;
+  background-color: darkgray;
+  /* height: 100%; */
+}
+main {
+  /* height: 800px; */
+}
+/* Header.css */
+/* .Header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+} */
+
+/* .nav {
+  display: flex;
+  background-color: blue;
+} */
+
+/* button {
+  margin-right: 20px;
+  font-weight: normal;
+}
+
+button.active {
+  font-weight: bold;
+} */
+
+/* Footer.css */
+
+/* .startButton {
+  font-size: 1.5rem;
+  padding: 10px;
+} */
