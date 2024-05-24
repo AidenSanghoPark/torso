@@ -28,7 +28,6 @@ button {
 }
 
 button.active {
-  /* background-color: #ccc; */
   border: 3.5px solid white;
   color: white;
 }
@@ -39,67 +38,74 @@ button.active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #ffffff; */
   padding: 40px 40px;
   position: fixed;
   top: 0;
   width: 100%;
+  -webkit-box-align: center;
+  min-width: 400px;
+  height: 120px;
 }
 
 .menu-item {
-  /* background-color: #ffffff; */
-  border-radius: 40px;
-  padding: 10px 40px;
-  margin: 0 10px;
-  /* transition: background-color 1s ease-in-out; */
-  /* border: 3px solid #ffffff; */
   position: relative;
-}
-.menu-item::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: white;
-  transition: width 0.3s ease-in-out;
-  border-radius: 25px;
+  text-align: center;
 }
 
-.menu-item.active::before {
-  width: 100%;
-}
-
-.menu-item a {
-  position: relative; /* 부모 요소에 상대 위치 설정 */
-  z-index: 1; /* 텍스트가 배경 위에 보이도록 함 */
-}
-/* .menu-item.active {
-  background-color: white;
-} */
 .menu-item.active a {
+  text-align: center;
+  display: inline-block;
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 21px;
   letter-spacing: 6px;
+  background-color: white;
+  border-radius: 999px;
+  padding: 10px 20px; /* 초기 padding 값 */
+
+  @media (max-width: 400px) {
+    padding: 10px 10px;
+    font-size: 19px;
+  }
 }
 
 .menu-item a {
   text-decoration: none;
   color: #ffffff;
   font-weight: bold;
-  font-size: 18px; /* 예시로 18px로 설정 */
+  font-size: 21px;
   letter-spacing: 6px;
+  margin: auto;
 }
 
+/*  */
+
+/* 
 .container {
   position: fixed;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* transform: translate(-50%, calc(-50% + 30px)); */
+  overflow-y: auto;
+  max-height: 100vh;
+  min-width: 400px;
+  transform: translate(-50%, calc(-50% + 30px));
+} */
+
+.container {
+  position: fixed;
+  top: calc(50% + 40px); /* .top-navbar의 높이 반영 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: auto; /* 세로 스크롤이 내용을 벗어날 경우 생성 */
+  max-height: calc(100vh - 120px); /* 컨테이너가 뷰포트의 최대 높이를 넘지 않도록 설정 */
+  min-width: 400px;
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* 웹킷 브라우저에서 스크롤바 숨기기 */
 }
 
 .container .row .col h3 {
@@ -114,7 +120,7 @@ button.active {
   font-weight: bold;
   border-radius: 25px;
   color: black; /* 원하는 색상으로 변경 */
-  font-size: 24px; /* 원하는 글자 크기로 변경 */
+  font-size: 21px; /* 원하는 글자 크기로 변경 */
   margin: 50px 15px 0px 15px;
 }
 
@@ -163,6 +169,10 @@ button.active {
 
 .selected {
   border-bottom: 3px solid white;
-  max-width: 50%;
+  max-width: 80%;
   margin: 0 auto;
+}
+
+.col.text-center.mt-5 {
+  margin-top: 0 !important;
 }

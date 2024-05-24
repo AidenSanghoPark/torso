@@ -10,6 +10,7 @@ import Name from "./InputName";
 import Shampoo from "./Shampoo";
 import Hair from "./Hair";
 import CustomModal from "./CustomModal";
+import styled from "styled-components";
 
 const Step1 = () => {
   const navigate = useNavigate();
@@ -54,9 +55,12 @@ const Step1 = () => {
   const handlePrevious = (component) => {
     setSelectedComponent(component); // 이전 버튼 클릭 시 선택된 컴포넌트를 SelectDesigner로 변경
   };
+
   useEffect(() => {
     if (selectedComponent === "wait") {
       setIsModalOpen(true);
+      //알림톡
+      // sendNotification("010-7484-2242", "예약 확인", "예약이 확인되었습니다.");
       const id = setTimeout(() => {
         setIsModalOpen(false);
         handleGoHome();
@@ -66,36 +70,43 @@ const Step1 = () => {
     }
     // selectedComponent가 변경될 때마다 useEffect를 재실행합니다.
   }, [selectedComponent]);
+
   const handleCloseModal = () => {
     setIsModalOpen(false);
     clearTimeout(timeoutId);
     handleGoHome();
   };
 
+  const FontWrapper = styled.div`
+    font-family: Pretendard, sans-serif;
+  `;
+
   //   console.log(selectedComponent);
   return (
     <>
-      <NavBar selectedComponent={selectedComponent} />
-      <div className="container">
-        <div className="row">
-          <div className="col text-center mt-5">
-            {selectedComponent === "designer" ? (
-              <SelectDesigner designers={designers} handleDesignerSelection={handleDesignerSelection} handleGoHome={handleGoHome} handleNext={() => handleNext("time")} />
-            ) : selectedComponent === "time" ? (
-              <SelectTime handleTimeSelection={handleTimeSelection} handleGoHome={handleGoHome} handlePrevious={handlePrevious} handleNext={() => handleNext("style")} />
-            ) : selectedComponent === "style" ? (
-              <SelectStyle handleStyleSelection={handleStyleSelection} handlePrevious={handlePrevious} handleNext={() => handleNext("name")} />
-            ) : selectedComponent === "name" ? (
-              <Name handleNameInput={handleNameInput} handlePrevious={handlePrevious} handleNext={() => handleNext("shampoo")} />
-            ) : selectedComponent === "shampoo" ? (
-              <Shampoo handleShampooSelection={handleShampooSelection} handlePrevious={handlePrevious} handleNext={() => handleNext("hair")} />
-            ) : (
-              <Hair handleHairSelection={handleHairSelection} handlePrevious={handlePrevious} handleNext={() => handleNext("wait")} />
-            )}
+      <FontWrapper>
+        <NavBar selectedComponent={selectedComponent} />
+        <div className="container">
+          <div className="row">
+            <div className="col text-center mt-5">
+              {selectedComponent === "designer" ? (
+                <SelectDesigner designers={designers} handleDesignerSelection={handleDesignerSelection} handleGoHome={handleGoHome} handleNext={() => handleNext("time")} />
+              ) : selectedComponent === "time" ? (
+                <SelectTime handleTimeSelection={handleTimeSelection} handleGoHome={handleGoHome} handlePrevious={handlePrevious} handleNext={() => handleNext("style")} />
+              ) : selectedComponent === "style" ? (
+                <SelectStyle handleStyleSelection={handleStyleSelection} handlePrevious={handlePrevious} handleNext={() => handleNext("name")} />
+              ) : selectedComponent === "name" ? (
+                <Name handleNameInput={handleNameInput} handlePrevious={handlePrevious} handleNext={() => handleNext("shampoo")} />
+              ) : selectedComponent === "shampoo" ? (
+                <Shampoo handleShampooSelection={handleShampooSelection} handlePrevious={handlePrevious} handleNext={() => handleNext("hair")} />
+              ) : (
+                <Hair handleHairSelection={handleHairSelection} handlePrevious={handlePrevious} handleNext={() => handleNext("wait")} />
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      <CustomModal isOpen={isModalOpen} closeModal={handleCloseModal} timeoutId={timeoutId} />
+        <CustomModal isOpen={isModalOpen} closeModal={handleCloseModal} timeoutId={timeoutId} />
+      </FontWrapper>
     </>
   );
 };

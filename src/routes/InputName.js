@@ -14,7 +14,7 @@ const InputName = ({ handleNameInput, handleNext, handlePrevious }) => {
   return (
     <>
       <h3>예약자분의 성함을 입력해주세요</h3>
-      <InputGroup size="lg">
+      <InputGroup size="lg" style={{ width: "70%", margin: "0 auto" }}>
         <Form.Control
           id="inputName"
           className="text-center"

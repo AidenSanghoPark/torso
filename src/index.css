@@ -6,8 +6,8 @@
 }
 
 @font-face {
-  font-family: "NotoSansKR-ExtraBold"; /* 사용할 폰트의 이름을 정의 */
-  src: url("./fonts/NotoSansKR-ExtraBold.ttf"); /* 폰트 파일의 위치 */
+  font-family: "NotoSansKR-ExtraBold";
+  src: url("./fonts/NotoSansKR-ExtraBold.ttf");
 }
 
 body {

@@ -6,6 +6,7 @@ import {} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LogoWhite from "./assets/logo_white.svg";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { styled } from "styled-components";
 import Step1 from "./routes/Step1";
 
 function App() {
